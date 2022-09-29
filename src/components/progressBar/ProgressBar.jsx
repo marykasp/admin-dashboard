@@ -23,6 +23,7 @@ const ProgressBar = (props) => {
     dashOffset = dashArray * ((100 - progress) / 100)
 
   let hideLabel = (size < 100 || !label.length || spinnerMode) ? true : false
+  console.log(hideLabel)
 
   return (
     <>

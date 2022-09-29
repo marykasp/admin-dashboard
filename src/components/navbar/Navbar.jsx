@@ -1,4 +1,6 @@
 import React from 'react'
+import DropdownMenu from '../dropdownMenu/DropdownMenu'
+import NavItem from "./NavItem"
 import "./navbar.scss"
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined'
@@ -16,32 +18,20 @@ const Navbar = () => {
           <input type="text" placeholder='Search...' />
           <SearchOutlinedIcon className="icon" />
         </div>
-        <div className="items">
-          <div className="item">
-            <LanguageOutlinedIcon className="icon" />
-            English
-          </div>
-          <div className="item">
-            <DarkModeOutlinedIcon className="icon" />
-          </div>
-          <div className="item">
-            <FullscreenOutlinedIcon className="icon" />
-          </div>
-          <div className="item">
-            <NotificationsNoneOutlinedIcon className="icon" />
-            <div className="counter">1</div>
-          </div>
-          <div className="item">
-            <ChatBubbleOutlinedIcon className="icon" />
-            <div className="counter">5</div>
-          </div>
-          <div className="item">
-            <ListOutlinedIcon className="icon" />
-          </div>
-          <div className="item">
-            <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="" className='avatar' />
-          </div>
-        </div>
+        <ul className="nav-items">
+          <NavItem icon={<LanguageOutlinedIcon />} />
+          <NavItem icon={<DarkModeOutlinedIcon />} />
+          <NavItem icon={<FullscreenOutlinedIcon />} />
+          <NavItem icon={<NotificationsNoneOutlinedIcon className="icon" />} notifications={10} />
+
+          <NavItem icon={<ChatBubbleOutlinedIcon className="icon" />} notifications={5} />
+
+          <NavItem icon={<img src="https://randomuser.me/api/portraits/men/10.jpg" alt="" className='avatar' />} />
+          <NavItem icon={<ListOutlinedIcon />}>
+            {/* Dropdown goes here */}
+            <DropdownMenu />
+          </NavItem>
+        </ul>
       </div>
     </div>
   )

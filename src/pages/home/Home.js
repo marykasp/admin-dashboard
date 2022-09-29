@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
 import Featured from "../../components/featured/Featured";
 import Chart from "../../components/chart/Chart";
+
 import "./home.scss";
 
 const Home = () => {

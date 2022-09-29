@@ -3,8 +3,8 @@
 
   .homeContainer {
     flex: 6;
-    // background-color: rgb(251, 251, 251);
-
+    padding: 0 40px;
+    background-color: rgb(251, 251, 251);
     .widgets,
     .charts {
       display: flex;

@@ -34,19 +34,20 @@
       }
     }
 
-    .items {
+    .nav-items {
       display: flex;
       align-items: center;
+      list-style: none;
 
-      .item {
+      .nav-item {
         display: flex;
         align-items: center;
         margin-right: 20px;
         position: relative;
+        cursor: pointer;
 
         .icon {
           font-size: 24px;
-          cursor: pointer;
         }
 
         .avatar {
