@@ -33,7 +33,7 @@ const Sidebar = () => {
           </li>
           <li>
             <StorefrontIcon className="icon" />
-            <span>Products</span>
+            <span>Projects</span>
           </li>
           <li>
             <CreditCardIcon className="icon" />
@@ -42,19 +42,19 @@ const Sidebar = () => {
           <div className="title">INFORMATION</div>
           <li>
             <AssessmentIcon className="icon" />
-            <span>Stats</span>
-          </li>
-          <li>
-            <NotificationsIcon className="icon" />
-            <span>Notifications</span>
+            <span>Data</span>
           </li>
           <li>
             <TextSnippetIcon className="icon" />
-            <span>Logs</span>
+            <span>Documents</span>
           </li>
           <li>
             <SettingsIcon className="icon" />
             <span>Settings</span>
+          </li>
+          <li>
+            <NotificationsIcon className="icon" />
+            <span>Notifications</span>
           </li>
           <p className="title">USER</p>
           <li>
