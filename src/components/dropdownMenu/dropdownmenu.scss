@@ -1,13 +1,52 @@
 .dropdown {
   position: absolute;
   top: 50px;
-  right: -160px;
-  width: 300px;
-  transform: translateX(-45%);
+  width: 200px;
+  transform: translateX(-55%);
   background-color: #fff;
   border-radius: 3px;
   padding: 1rem;
   overflow: hidden;
+
+  .menu-primary-enter {
+    position: absolute;
+    transform: translateX(-110%);
+  }
+
+  .menu-primary-enter-active {
+    transform: translateX(0%);
+    transition: all 0.3s ease;
+  }
+
+  .menu-primary-exit {
+    position: absolute;
+  }
+
+  .menu-primary-exit-active {
+    transform: translateX(-110%);
+  }
+
+  .menu-secondary-enter {
+    position: absolute;
+    transform: translateX(110%);
+  }
+
+  .menu-secondary-enter-active {
+    transform: translateX(0%);
+    transition: all 0.3s ease;
+  }
+
+  .menu-secondary-exit {
+    position: absolute;
+  }
+
+  .menu-secondary-exit-active {
+    transform: translateX(110%);
+  }
+
+  .menu {
+    width: 100%;
+  }
 
   .menu-item {
     text-decoration: none;
@@ -25,7 +64,7 @@
     }
 
     .icon-right {
-      margin-left: 8px;
+      margin: auto;
     }
 
     &:hover {

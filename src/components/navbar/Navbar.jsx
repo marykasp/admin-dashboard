@@ -19,6 +19,10 @@ const Navbar = () => {
           <SearchOutlinedIcon className="icon" />
         </div>
         <ul className="nav-items">
+          <NavItem icon={<DarkModeOutlinedIcon />}>
+            {/* Dropdown goes here */}
+            <DropdownMenu />
+          </NavItem>
           <NavItem icon={<LanguageOutlinedIcon />} />
           <NavItem icon={<DarkModeOutlinedIcon />} />
           <NavItem icon={<FullscreenOutlinedIcon />} />
@@ -31,6 +35,7 @@ const Navbar = () => {
             {/* Dropdown goes here */}
             <DropdownMenu />
           </NavItem>
+
         </ul>
       </div>
     </div>

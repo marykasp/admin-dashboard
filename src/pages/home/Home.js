@@ -9,23 +9,42 @@ import "./home.scss";
 
 const Home = () => {
   return (
-    <div className="home">
-      <Sidebar />
-      <div className="homeContainer">
-        <Navbar />
-        <div className="widgets">
-          <Widget type="user" />
-          <Widget type="order" />
-          <Widget type="projects" />
-          <Widget type="balance" />
-        </div>
-        <div className="charts">
-          <Featured />
-          <Chart />
-        </div>
+    <div className="homeContainer">
+      <div className="widgets">
+        <Widget type="user" />
+        <Widget type="order" />
+        <Widget type="projects" />
+        <Widget type="balance" />
+      </div>
+      <div className="charts">
+        <Featured />
+        <Chart />
       </div>
     </div>
   );
 };
 
 export default Home;
+
+// const Home = () => {
+//   return (
+//     <div className="home">
+//       <Sidebar />
+//       <div className="homeContainer">
+//         <Navbar />
+//         <div className="widgets">
+//           <Widget type="user" />
+//           <Widget type="order" />
+//           <Widget type="projects" />
+//           <Widget type="balance" />
+//         </div>
+//         <div className="charts">
+//           <Featured />
+//           <Chart />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;

@@ -6,13 +6,14 @@ import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./global.css";
+import MainLayout from "./layout/MainLayout";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/">
+          <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="users">
