@@ -31,6 +31,11 @@
       margin: 0;
       padding: 0;
 
+      .sidebar-section {
+        display: flex;
+        flex-direction: column;
+      }
+
       .title {
         font-size: 12px;
         font-weight: bold;

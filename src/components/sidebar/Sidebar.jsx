@@ -1,5 +1,6 @@
 import React from 'react'
 import "./sidebar.scss"
+import SidebarItem from './SidebarItem';
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import StorefrontIcon from "@mui/icons-material/Storefront";
@@ -16,55 +17,80 @@ import GroupIcon from "@mui/icons-material/Group";
 
 export const sidebarList = [
   {
-    icon: (<DashboardIcon className="icon" />),
-    title: "Dashboard",
-    section: "Main",
+    id: 1,
+    title: 'Main',
+    children: [
+      {
+        icon: (<DashboardIcon className="icon" />),
+        title: "Dashboard",
+        link: "/",
+      },
+      {
+        icon: <GroupIcon className="icon" />,
+        title: "Users",
+        link: "/users",
+      },
+    ]
   },
   {
-    icon: <GroupIcon className="icon" />,
-    title: "Users",
-    section: "Main",
+    id: 2,
+    title: 'Information',
+    children: [
+      {
+        icon: <StorefrontIcon className="icon" />,
+        title: "Projects",
+        link: "/projects"
+      },
+      {
+        icon: <CreditCardIcon className="icon" />,
+        title: "Orders",
+
+      },
+      {
+        icon: <DashboardIcon className="icon" />,
+        title: "Data",
+
+      },
+      {
+        icon: <AssessmentIcon className="icon" />,
+        title: "Documents",
+
+      },
+    ]
   },
   {
-    icon: <StorefrontIcon className="icon" />,
-    title: "Projects",
-    section: "Information",
+    id: 3,
+    title: 'Settings',
+    children: [
+      {
+        icon: <SettingsIcon className="icon" />,
+        title: "Settings",
+        section: "Settings",
+      },
+      {
+        icon: <TextSnippetIcon className="icon" />,
+        title: "Logs",
+        section: "Settings",
+      },
+    ]
   },
   {
-    icon: <CreditCardIcon className="icon" />,
-    title: "Orders",
-    section: "Information",
+    id: 3,
+    title: 'Settings',
+    children: [
+      {
+        icon: <AccountCircleIcon className="icon" />,
+        title: "Profile",
+        sectio: "User",
+      },
+      {
+        icon: <LogoutIcon className="icon" />,
+        title: "Logout",
+        section: "User",
+      },
+    ]
   },
-  {
-    icon: <DashboardIcon className="icon" />,
-    title: "Data",
-    section: "Information",
-  },
-  {
-    icon: <AssessmentIcon className="icon" />,
-    title: "Documents",
-    sectionn: "Information",
-  },
-  {
-    icon: <SettingsIcon className="icon" />,
-    title: "Settings",
-    section: "Settings",
-  },
-  {
-    icon: <TextSnippetIcon className="icon" />,
-    title: "Logs",
-    section: "Settings",
-  },
-  {
-    icon: <AccountCircleIcon className="icon" />,
-    title: "Profile",
-    sectio: "User",
-  },
-  {
-    icon: <LogoutIcon className="icon" />,
-    title: "Logout",
-    section: "User",
-  },
+
 ];
 
 
@@ -78,37 +104,14 @@ const Sidebar = () => {
       </div>
       <hr />
       <div className="center">
-        <ul>
-          <p className="title">Main</p>
-          {sidebarList.filter(item => item.section === 'Main').map(item => (
-            <li>
-              {item.icon}
-              <span>{item.title}</span>
-            </li>
-
+        <div>
+          {sidebarList.map((nav, index) => (
+            <div className="sidebar-section" key={index}>
+              <p className="title">{nav.title}</p>
+              <SidebarItem items={nav.children} />
+            </div>
           ))}
-          <p className="title">Information</p>
-          {sidebarList.filter(item => item.section === 'Information').map(item => (
-            <li>
-              {item.icon}
-              <span>{item.title}</span>
-            </li>
-          ))}
-          <p className="title">Settings</p>
-          {sidebarList.filter(item => item.section === 'Settings').map(item => (
-            <li>
-              {item.icon}
-              <span>{item.title}</span>
-            </li>
-          ))}
-          <p className="title">User</p>
-          {sidebarList.filter(item => item.section === 'User').map(item => (
-            <li>
-              {item.icon}
-              <span>{item.title}</span>
-            </li>
-          ))}
-        </ul>
+        </div>
       </div>
       <div className="bottom">
         <div className="colorOption"></div>
