@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'
 import "./sidebar.scss"
-import SidebarItem from './SidebarItem';
+import SidebarMenu from './SidebarMenu';
+import SidebarItem from "./SidebarItem";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import AssessmentIcon from "@mui/icons-material/Assessment";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+// import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
@@ -44,17 +46,17 @@ export const sidebarList = [
       {
         icon: <CreditCardIcon className="icon" />,
         title: "Orders",
-
+        link: "/orders"
       },
       {
         icon: <DashboardIcon className="icon" />,
         title: "Data",
-
+        link: "/data"
       },
       {
         icon: <AssessmentIcon className="icon" />,
         title: "Documents",
-
+        link: "/documents"
       },
     ]
   },
@@ -65,12 +67,12 @@ export const sidebarList = [
       {
         icon: <SettingsIcon className="icon" />,
         title: "Settings",
-        section: "Settings",
+        link: "/settings"
       },
       {
         icon: <TextSnippetIcon className="icon" />,
         title: "Logs",
-        section: "Settings",
+        link: "/logs"
       },
     ]
   },
@@ -81,19 +83,17 @@ export const sidebarList = [
       {
         icon: <AccountCircleIcon className="icon" />,
         title: "Profile",
-        sectio: "User",
+        link: "/profile"
       },
       {
         icon: <LogoutIcon className="icon" />,
         title: "Logout",
-        section: "User",
+        link: "/form"
       },
     ]
   },
 
 ];
-
-
 
 
 const Sidebar = () => {
@@ -106,18 +106,18 @@ const Sidebar = () => {
       <div className="center">
         <div>
           {sidebarList.map((nav, index) => (
-            <div className="sidebar-section" key={index}>
-              <p className="title">{nav.title}</p>
+            <SidebarMenu nav={nav} index={index}>
               <SidebarItem items={nav.children} />
-            </div>
+            </SidebarMenu>
           ))}
+
         </div>
       </div>
       <div className="bottom">
         <div className="colorOption"></div>
         <div className="colorOption"></div>
       </div>
-    </div>
+    </div >
   )
 }
 
